@@ -8,7 +8,7 @@ export default async function CheckoutPage() {
 
     await setShippingAddress(formData);
 
-    return redirect('/checkout/payment');
+    redirect('/checkout/payment');
   }
 
   return (

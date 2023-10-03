@@ -9,15 +9,17 @@ export function PaymentForm(props) {
   return (
     <form className="flex flex-col gap-3" {...props}>
       <Section>
-        <Section.Heading>Payment method</Section.Heading>
-        <Select name="paymentMethod" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
-          <option value="" disabled>
-            Select a payment method
-          </option>
-          <option value="card">Credit card</option>
-          <option value="ideal">iDEAL</option>
-          <option value="bank">Bank transfer</option>
-        </Select>
+        <Label>
+          <Section.Heading>Payment method</Section.Heading>
+          <Select name="paymentMethod" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
+            <option value="" disabled>
+              Select a payment method
+            </option>
+            <option value="card">Credit card</option>
+            <option value="ideal">iDEAL</option>
+            <option value="bank">Bank transfer</option>
+          </Select>
+        </Label>
       </Section>
 
       {!!paymentMethod && (
@@ -27,7 +29,7 @@ export function PaymentForm(props) {
             <>
               <Label>
                 Card holder
-                <Input type="text" name="card" placeholder="Enter your full name" required />
+                <Input type="text" name="name" placeholder="Enter your full name" required />
               </Label>
 
               <div className="flex gap-2">

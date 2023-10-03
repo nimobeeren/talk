@@ -14,7 +14,7 @@ export default async function PaymentPage() {
 
     cookies().set('orderId', orderId);
     cookies().delete('cartId');
-    return redirect('/thank-you');
+    redirect('/thank-you');
   }
 
   return (
