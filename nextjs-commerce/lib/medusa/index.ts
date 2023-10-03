@@ -359,11 +359,13 @@ export async function getCart(cartId: string): Promise<Cart | null> {
 }
 
 export async function setShippingAddress(formData: FormData) {
-  console.log('setting shipping address', formData);
+  // console.log('setting shipping address', formData);
+  JSON.stringify(formData);
 }
 
 export async function placeOrder(cartId: string, formData: FormData) {
-  console.log('placing order', cartId, formData);
+  // console.log('placing order', cartId, formData);
+  JSON.stringify({ cartId, formData })
   const orderId = String(Math.random()).substring(2, 10);
   return orderId;
 }
