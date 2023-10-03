@@ -358,6 +358,12 @@ export async function getCart(cartId: string): Promise<Cart | null> {
   return reshapeCart(cart);
 }
 
+export async function placeOrder(cartId: string, formData: FormData): Promise<string> {
+  console.log('placing order', cartId, formData);
+  const orderId = String(Math.random()).substring(2, 10);
+  return orderId;
+}
+
 export async function getCategories(): Promise<ProductCollection[]> {
   const res = await medusaRequest({
     method: 'GET',
@@ -448,7 +454,7 @@ export async function getProducts({
     return [];
   }
 
-  let products: Product[] = res?.body.products.map((product: MedusaProduct) =>
+  const products: Product[] = res?.body.products.map((product: MedusaProduct) =>
     reshapeProduct(product)
   );
 

@@ -14,20 +14,6 @@ export default async function CheckoutPage() {
 
       <Section>
         <Section.Heading>Shipping address</Section.Heading>
-        <Label>
-          Country
-          <Select defaultValue="">
-            <option value="" disabled>
-              Select your country
-            </option>
-            <option value="be">Belgium</option>
-            <option value="de">Germany</option>
-            <option value="nl">The Netherlands</option>
-            <option value="uk">United Kingdom</option>
-            <option value="us">United States</option>
-          </Select>
-        </Label>
-
         <div className="flex gap-4">
           <Label>
             First name (optional)
@@ -59,6 +45,20 @@ export default async function CheckoutPage() {
             <Input type="text" name="postcode" placeholder="Enter your postcode" />
           </Label>
         </div>
+
+        <Label>
+          Country
+          <Select defaultValue="">
+            <option value="" disabled>
+              Select your country
+            </option>
+            <option value="be">Belgium</option>
+            <option value="de">Germany</option>
+            <option value="nl">The Netherlands</option>
+            <option value="uk">United Kingdom</option>
+            <option value="us">United States</option>
+          </Select>
+        </Label>
       </Section>
 
       <div className="flex justify-end">
