@@ -27,17 +27,17 @@ export function PaymentForm(props) {
             <>
               <Label>
                 Card holder
-                <Input type="text" name="card" placeholder="Enter your full name" />
+                <Input type="text" name="card" placeholder="Enter your full name" required />
               </Label>
 
               <div className="flex gap-2">
                 <Label>
                   Card number
-                  <Input type="text" name="card" placeholder="Enter your card number" />
+                  <Input type="text" name="card" placeholder="Enter your card number" required />
                 </Label>
                 <Label>
                   CVC
-                  <Input type="text" name="cvc" placeholder="CVC" />
+                  <Input type="text" name="cvc" placeholder="CVC" required />
                 </Label>
               </div>
             </>

@@ -358,7 +358,11 @@ export async function getCart(cartId: string): Promise<Cart | null> {
   return reshapeCart(cart);
 }
 
-export async function placeOrder(cartId: string, formData: FormData): Promise<string> {
+export async function setShippingAddress(formData: FormData) {
+  console.log('setting shipping address', formData);
+}
+
+export async function placeOrder(cartId: string, formData: FormData) {
   console.log('placing order', cartId, formData);
   const orderId = String(Math.random()).substring(2, 10);
   return orderId;
