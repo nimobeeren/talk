@@ -7,8 +7,8 @@ export default function ThankYouPage() {
 
   return (
     <>
-      <h2 className="text-center text-4xl">Thank you for your order!</h2>
-      <div className="text-center text-lg">
+      <h2 className="text-center text-4xl font-medium">Thank you for your order!</h2>
+      <div className="text-center text-3xl">
         <p>We&apos;ll get right on it!</p>
         <p>
           Order ID: <b>{orderId}</b>
