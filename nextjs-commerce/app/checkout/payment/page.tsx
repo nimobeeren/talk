@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 
 export default async function PaymentPage() {
   async function pay(formData: FormData) {
-    'use server'
+    'use server';
 
     const cartId = cookies().get('cartId')?.value;
     if (!cartId) throw new Error('Your cart got lost :(');
@@ -17,7 +17,5 @@ export default async function PaymentPage() {
     redirect('/thank-you');
   }
 
-  return (
-    <PaymentForm action={pay} />
-  )
+  return <PaymentForm action={pay} />;
 }

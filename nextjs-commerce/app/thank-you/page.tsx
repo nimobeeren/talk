@@ -8,9 +8,11 @@ export default function ThankYouPage() {
   return (
     <>
       <h2 className="text-center text-4xl">Thank you for your order!</h2>
-      <div className='text-center text-lg'>
+      <div className="text-center text-lg">
         <p>We&apos;ll get right on it!</p>
-        <p>Order ID: <b>{orderId}</b></p>
+        <p>
+          Order ID: <b>{orderId}</b>
+        </p>
       </div>
       <div className="flex justify-center">
         <Link href="/">

@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { useState } from "react";
-import { Button, Input, Label, Section, Select } from "./checkout-components";
+import { useState } from 'react';
+import { Button, Input, Label, Section, Select } from './checkout-components';
 
 export function PaymentForm(props) {
   const [paymentMethod, setPaymentMethod] = useState('');
@@ -11,7 +11,11 @@ export function PaymentForm(props) {
       <Section>
         <Label>
           <Section.Heading>Payment method</Section.Heading>
-          <Select name="paymentMethod" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
+          <Select
+            name="paymentMethod"
+            value={paymentMethod}
+            onChange={(e) => setPaymentMethod(e.target.value)}
+          >
             <option value="" disabled>
               Select a payment method
             </option>
@@ -65,9 +69,7 @@ export function PaymentForm(props) {
         </Section>
       )}
       <div className="flex justify-end">
-        <Button type="submit">
-          Place order
-        </Button>
+        <Button type="submit">Place order</Button>
       </div>
     </form>
   );

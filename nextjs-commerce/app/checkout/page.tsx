@@ -11,7 +11,5 @@ export default async function CheckoutPage() {
     redirect('/checkout/payment');
   }
 
-  return (
-    <ShippingForm action={setShipping} />
-  );
+  return <ShippingForm action={setShipping} />;
 }

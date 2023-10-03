@@ -2,7 +2,7 @@ import { Button, Input, Label, Section, Select } from 'components/checkout/check
 
 export function ShippingForm(props) {
   return (
-    <form className='flex flex-col gap-8' {...props}>
+    <form className="flex flex-col gap-8" {...props}>
       <Section className="flex flex-col gap-2">
         <Section.Heading>Contact</Section.Heading>
         <Label>
@@ -26,7 +26,12 @@ export function ShippingForm(props) {
 
         <Label>
           Address
-          <Input type="text" name="address-1" placeholder="Enter your first address line" required />
+          <Input
+            type="text"
+            name="address-1"
+            placeholder="Enter your first address line"
+            required
+          />
         </Label>
 
         <Label>
@@ -64,5 +69,5 @@ export function ShippingForm(props) {
         <Button type="submit">Proceed to payment</Button>
       </div>
     </form>
-  )
+  );
 }
