@@ -7,7 +7,7 @@ export function PaymentForm(props) {
   const [paymentMethod, setPaymentMethod] = useState('');
 
   return (
-    <form className="flex flex-col gap-3" {...props}>
+    <form className="flex flex-col gap-8" {...props}>
       <Section>
         <Label>
           <Section.Heading>Payment method</Section.Heading>
@@ -28,18 +28,24 @@ export function PaymentForm(props) {
 
       {!!paymentMethod && (
         <Section>
-          <Section.Heading>Payment details</Section.Heading>
           {paymentMethod === 'card' && (
             <>
-              <Label>
-                Card holder
-                <Input type="text" name="name" placeholder="Enter your full name" required />
-              </Label>
-
-              <div className="flex gap-2">
+              <Section.Heading>Card details</Section.Heading>
+              <div className="flex gap-4">
+                <Label>
+                  Card holder
+                  <Input type="text" name="name" placeholder="Enter your full name" required />
+                </Label>
                 <Label>
                   Card number
                   <Input type="text" name="card" placeholder="Enter your card number" required />
+                </Label>
+              </div>
+
+              <div className="flex gap-4">
+                <Label>
+                  Expiration date
+                  <Input type="text" name="expiration" placeholder="YYYY/MM" required />
                 </Label>
                 <Label>
                   CVC
@@ -50,15 +56,18 @@ export function PaymentForm(props) {
           )}
 
           {paymentMethod === 'ideal' && (
-            <Select name="bank" defaultValue="">
-              <option value="" disabled>
-                Select your bank
-              </option>
-              <option value="abn">ABN Amro</option>
-              <option value="asn">ASN</option>
-              <option value="ing">ING</option>
-              <option value="rabo">Rabobank</option>
-            </Select>
+            <Label>
+              <Section.Heading>Bank</Section.Heading>
+              <Select name="bank" defaultValue="">
+                <option value="" disabled>
+                  Select your bank
+                </option>
+                <option value="abn">ABN Amro</option>
+                <option value="asn">ASN</option>
+                <option value="ing">ING</option>
+                <option value="rabo">Rabobank</option>
+              </Select>
+            </Label>
           )}
 
           {paymentMethod === 'bank' && (
