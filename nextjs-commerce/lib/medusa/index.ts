@@ -365,7 +365,7 @@ export async function setShippingAddress(formData: FormData) {
 
 export async function placeOrder(cartId: string, formData: FormData) {
   // console.log('placing order', cartId, formData);
-  JSON.stringify({ cartId, formData })
+  JSON.stringify({ cartId, formData });
   const orderId = String(Math.random()).substring(2, 10);
   return orderId;
 }
