@@ -58,7 +58,7 @@ export function ShippingForm(props) {
             </option>
             <option value="be">Belgium</option>
             <option value="de">Germany</option>
-            <option value="nl">The Netherlands</option>
+            <option value="nl">Netherlands</option>
             <option value="uk">United Kingdom</option>
             <option value="us">United States</option>
           </Select>
