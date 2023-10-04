@@ -28,7 +28,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
     // Open cart modal when quantity changes.
     if (cart?.totalQuantity !== quantityRef.current) {
       // But only if it's not already open (quantity also changes when editing items in cart).
-      if (!isOpen) {
+      if (!isOpen && cart?.totalQuantity) {
         setIsOpen(true);
       }
 
