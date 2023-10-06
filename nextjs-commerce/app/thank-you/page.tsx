@@ -10,12 +10,9 @@ export default function ThankYouPage() {
       <h2 className="text-center text-4xl font-medium">Thank you for your order!</h2>
       <div className="text-center text-3xl">
         <p>We&apos;ll get right on it!</p>
-        <dl className="inline [&>*]:inline">
-          <dt className="after:content-[':_']">Order ID</dt>
-          <dd>
-            <b>{orderId}</b>
-          </dd>
-        </dl>
+        <p>
+          Order ID: <b>{orderId}</b>
+        </p>
       </div>
       <div className="flex justify-center">
         <Link href="/">
