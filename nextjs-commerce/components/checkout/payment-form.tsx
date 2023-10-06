@@ -9,21 +9,22 @@ export function PaymentForm(props) {
   return (
     <form className="flex flex-col gap-8" {...props}>
       <Section>
-        <Label>
+        <Label htmlFor="paymentMethod">
           <Section.Heading>Payment method</Section.Heading>
-          <Select
-            name="paymentMethod"
-            value={paymentMethod}
-            onChange={(e) => setPaymentMethod(e.target.value)}
-          >
-            <option value="" disabled>
-              Select a payment method
-            </option>
-            <option value="card">Credit card</option>
-            <option value="ideal">iDEAL</option>
-            <option value="bank">Bank transfer</option>
-          </Select>
         </Label>
+        <Select
+          id="paymentMethod"
+          name="paymentMethod"
+          value={paymentMethod}
+          onChange={(e) => setPaymentMethod(e.target.value)}
+        >
+          <option value="" disabled>
+            Select a payment method
+          </option>
+          <option value="card">Credit card</option>
+          <option value="ideal">iDEAL</option>
+          <option value="bank">Bank transfer</option>
+        </Select>
       </Section>
 
       {!!paymentMethod && (
@@ -56,9 +57,11 @@ export function PaymentForm(props) {
           )}
 
           {paymentMethod === 'ideal' && (
-            <Label>
-              <Section.Heading>Bank</Section.Heading>
-              <Select name="bank" defaultValue="">
+            <>
+              <Label htmlFor="bank">
+                <Section.Heading>Bank</Section.Heading>
+              </Label>
+              <Select id="bank" name="bank" defaultValue="">
                 <option value="" disabled>
                   Select your bank
                 </option>
@@ -67,7 +70,7 @@ export function PaymentForm(props) {
                 <option value="ing">ING</option>
                 <option value="rabo">Rabobank</option>
               </Select>
-            </Label>
+            </>
           )}
 
           {paymentMethod === 'bank' && (

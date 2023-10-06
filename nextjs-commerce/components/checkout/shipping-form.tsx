@@ -50,19 +50,17 @@ export function ShippingForm(props) {
           </Label>
         </div>
 
-        <Label>
-          Country
-          <Select name="country" defaultValue="">
-            <option value="" disabled>
-              Select your country
-            </option>
-            <option value="be">Belgium</option>
-            <option value="de">Germany</option>
-            <option value="nl">Netherlands</option>
-            <option value="uk">United Kingdom</option>
-            <option value="us">United States</option>
-          </Select>
-        </Label>
+        <Label htmlFor="country">Country</Label>
+        <Select id="country" name="country" defaultValue="">
+          <option value="" disabled>
+            Select your country
+          </option>
+          <option value="be">Belgium</option>
+          <option value="de">Germany</option>
+          <option value="nl">Netherlands</option>
+          <option value="uk">United Kingdom</option>
+          <option value="us">United States</option>
+        </Select>
       </Section>
 
       <div className="flex justify-end">
