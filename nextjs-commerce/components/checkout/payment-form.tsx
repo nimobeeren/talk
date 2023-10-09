@@ -1,10 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Button, Input, Label, Section, Select } from './checkout-components';
 
 export function PaymentForm(props) {
-  const [paymentMethod, setPaymentMethod] = useState('');
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const paymentMethod = searchParams.get('paymentMethod');
+
+  function setPaymentMethod(e: React.ChangeEvent) {
+    const input = e.target as HTMLInputElement;
+    const newParams = new URLSearchParams(searchParams.toString());
+
+    if (input.value) {
+      newParams.set('paymentMethod', input.value);
+    } else {
+      newParams.delete('paymentMethod');
+    }
+
+    router.replace(`/checkout/payment?${newParams.toString()}`);
+  }
 
   return (
     <form className="flex flex-col gap-8" {...props}>
@@ -15,8 +31,8 @@ export function PaymentForm(props) {
         <Select
           id="paymentMethod"
           name="paymentMethod"
-          value={paymentMethod}
-          onChange={(e) => setPaymentMethod(e.target.value)}
+          defaultValue={paymentMethod ?? ''}
+          onChange={setPaymentMethod}
         >
           <option value="" disabled>
             Select a payment method
